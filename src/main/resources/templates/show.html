@@ -10,8 +10,8 @@
     <title>Show Job</title>
     <style>
         body{
-            background-image: linear-gradient(to bottom right, cornflowerblue, lightgrey);
-            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(to bottom right, #ffa513, lightgrey);
+            font-family: 'Cuprum', sans-serif;
         }
 
         .container{
@@ -30,7 +30,7 @@
                 <div class="card-header" style="font-weight: bold" th:text="${job.title}">
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" >Posted Date: <span th:text="${#dates.format(job.posteddate,'yyyy-MM-dd HH:mm')}"></span></li>
+                    <li class="list-group-item" >Posted Date: <span th:text="${job.posteddate}"></span></li>
                     <li class="list-group-item" >Description: <span th:text="${job.description}"></span></li>
                     <li class="list-group-item" >Posted By: <span th:text="${job.author}"></span></li>
                     <li class="list-group-item" >Contact: <span th:text="${job.phone}"></span></li>

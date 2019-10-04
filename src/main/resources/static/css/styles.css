@@ -3,7 +3,7 @@
     padding:0;
 }
 body{
-    background-image: linear-gradient(to bottom right, cornflowerblue, lightgrey);
+    background-image: linear-gradient(to bottom right, #ffa513, lightgrey);
     font-family: 'Cuprum', sans-serif;
 
 }

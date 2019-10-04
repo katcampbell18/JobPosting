@@ -27,7 +27,7 @@
         <tbody>
         <tr th:each="job : ${jobs}">
             <td th:text="${job.title}"></td>
-            <td th:text="${#dates.format(job.posteddate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${job.posteddate}"></td>
             <td th:text="${job.description}"></td>
             <td th:text="${job.author}"></td>
             <td th:text="${job.phone}"></td>

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -21,8 +22,8 @@ public class Job {
     @NotNull
     private String description;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Date posteddate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private String posteddate;
 
     @NotNull
     private String author;
@@ -31,6 +32,9 @@ public class Job {
     private String phone;
 
     public Job() {
+        Date now = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm z");
+        this.posteddate = df.format(now);
     }
 
     public long getId() {
@@ -57,14 +61,19 @@ public class Job {
         this.description = description;
     }
 
-    public Date getPosteddate() {
+    public String getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(Date posteddate) {
-        this.posteddate = posteddate;
+    public void setPosteddate() {
+        Date now = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm z");
+        this.posteddate = df.format(now);
     }
 
+    public void setPosteddate(String posteddate) {
+        this.posteddate = posteddate;
+    }
     public String getAuthor() {
         return author;
     }

@@ -11,7 +11,7 @@
 </head>
 <body>
 <div th:insert="base :: navbar"></div>
-<h1 style="text-align: center;">Job Posting Form</h1>
+<h1 style="text-align: center;">Post Your Job</h1>
 <div class="container">
     <form action="#" th:action="@{/process}" th:object="${job}" method="post">
         <input type="hidden" th:field="*{id}" />
@@ -34,10 +34,12 @@
             <input type="text" class="form-control" th:field="*{phone}">
         </div>
         &nbsp;
-        <button type="submit" class="btn btn-success mb-2">Submit</button>
+        <button type="submit" onclick="confirmation()" class="btn-success mb-2">Submit</button>
     </form>
+    <script th:src="@{js/scripts.js}"></script>
 </div>
 <div th:insert="base :: footer"></div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
